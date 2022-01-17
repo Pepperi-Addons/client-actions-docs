@@ -1,18 +1,21 @@
 # CPI Node Client Actions
 
-##Introduction
+## Introduction
+The CPI Node allows addons to perform client actions within events. 
 
-This is the repo for the documentation of the pepperi CPI-Node Client Actions
+These actions are implemented by the clients.
 
-## Docs
-Each client actions is documented in a sepetare file.
-To add a new client action you add a new file, and add the action to the list below
+This is the documentation of these actions.
 
 ## Client Actions
 This a list of the client actions:
 
 * [Dialog](actions/dialog.md)
 
+## Contribution
+Each client action is documented in a seperate file, in the actions folder.
+[This](action-template.md) is a template of how a client action should be documented.
+To add a new client action you add a new file, and add the action to the list below
 
 ## Code of Conduct
-blah blah
+Every action must undergo a Pull Request review process. Before merging the action into the repo, the action must be reviewed by the at least two members with design knowledge.

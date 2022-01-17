@@ -1,20 +1,33 @@
 # Dialog
-Display a dialog in the client
+Display a dialog to the user.
 
-## Description of the action
-Here you describe what the action does and what are the usages
+## Description
+Allows for all types of dialogs to be displayed to the user.
 
-### Options
+* Alert Dialogs
+* Confirmation Dialogs
+* Custom HTML Dialogs
+
+### Parameters 
+
+#### Title
+The title of the dialog.
+Can this be empty? What happens if it is empty?
+
+#### Content
+The content of the dialog.
+Can this be a string? or HTML? or both? etc.
 
 ## Client Action API
-Here comes the offical client action API. This is what the clients must support
+Here comes the offical client action API. This is what the clients must support.
 
 ### Request
 ```json
 {
-  "Type": "Dialog",
+  "Type": "Action Name",
   "Data": {
-    // all the data needed for the client to perfrom the action goes here
+    "Title": "Hello",
+    "Content": "world",
   }
 }
 ```
@@ -22,15 +35,19 @@ Here comes the offical client action API. This is what the clients must support
 ### Response
 ```json
 {
-  // any data the client needs to pass back about the action goes here
+  "Clicked Action": "Action Key",
 }
 ```
 
 ## Usages
-How do we use the action in the cpi node.
-Some code examples.
+We can show a dialog from the CPI Node like one of the following examples.
 
 #### Example #1 - show an alert
 ```typescript
-await pepperi.client.showDialog('Hello', 'world');
+const res = await pepperi.client.showDialog({
+    Title: 'Hello',
+    Content: 'world',
+});
+// the result will be the key of the action that was clicked.
+console.log(result);
 ```
