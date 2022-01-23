@@ -11,17 +11,17 @@ Allows for all types of dialogs to be displayed to the user.
 ### Parameters 
 
 #### Title
-The title of the dialog.
-Can this be empty? What happens if it is empty?
-
+The title of the dialog (optional). 
 #### Content
-The content of the dialog.
-The content can be a string. or HTML.
-If the content starts with a HTML tag if will be shown as HTML.
+The content of the dialog. \
+The content can be a string or HTML. \
+If the content starts with a HTML tag it will be shown as HTML.\
 What about themes in native?
-
+#### IsHtml
+Indicate if the dialog content is an HTML. 
 #### Actions
-Every action has a Key and a Title.
+Every action has a Key and a Title.\
+At least one action must be defined.
 
 ### Return Object
 The client will return this object
@@ -34,10 +34,11 @@ The key of the selected action
 ### Request
 ```json
 {
-  "Type": "ShowDialog",
+  "Type": "Dialog",
   "Data": {
-    "Title": "Hello",
+    "Title": "Hello", //optional
     "Content": "world",
+    "IsHtml": false,
     "Actions": [
       {
         "Key": "e6372213-fa5c-4d72-ad3e-9e6b1169c04a",
@@ -77,6 +78,7 @@ await pepperi.client.alert({
 const res = await pepperi.client.confirm({
     // optional
     title: 'Hello',
+
     content: 'world',
 
     // optional
@@ -90,7 +92,7 @@ console.log(res); // true or false
 
 #### Usage #3 - full dialog
 ```typescript
-// returns the key of the actions selected no the client
+// returns the value of the action selected on the client
 const res = await pepperi.client.showDialog({
     // optional
     title: 'Hello',
