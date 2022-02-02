@@ -111,7 +111,7 @@ The key of the HUD.
 }
 ```
 
-## Usages
+## Usage
 We can show an HUD from the CPI Node like one of the following example.
 
 ```typescript
@@ -129,15 +129,15 @@ const hudOptions = {
     //tell the client to poll after after the interval time
     interval: 0.1, // optional - (default value is 0.5)
 
-    // NOTE, inside the block & cancelBlock, you can't call another client actions.
-    // block of code the will run in background will the HUD is showing.
+    // NOTE, inside both block and cancelBlock, you can't call another client actions.
+    // block of code that will run in background while the HUD is showing.
     block: async (updateMessage) => {
         for (let i = 0; i < 100; i++) {
             await new Promise((resolve) => setTimeout(resolve, 100));
             updateMessage(`In progress ${i}%`);
         }
     },
-    // block of code the will run in if the user will press on the HUD'S cancel button.
+    // block of code that will run only if the user will press on the HUD'S cancel button.
     cancelBlock: async () => {
         console.log('cancel button clicked');
     },
