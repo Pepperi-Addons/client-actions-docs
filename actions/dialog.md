@@ -80,12 +80,6 @@ const res = await pepperi.client.confirm({
     title: 'Hello',
 
     content: 'world',
-
-    // optional
-    trueTitle: '',
-
-    // optional
-    falseTitle: '',
 });
 console.log(res); // true or false
 ```
@@ -93,6 +87,7 @@ console.log(res); // true or false
 #### Usage #3 - full dialog
 ```typescript
 // returns the value of the action selected on the client
+// The value can be any type you want. string, number, json, functions and etc..
 const res = await pepperi.client.showDialog({
     // optional
     title: 'Hello',
