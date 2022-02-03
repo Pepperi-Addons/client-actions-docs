@@ -112,7 +112,7 @@ The key of the HUD.
 ```
 
 ## Usage
-We can show an HUD from the CPI Node like one of the following example.
+We can show a HUD from the CPI Node like one of the following example.
 
 ```typescript
 
@@ -132,12 +132,15 @@ const hudOptions = {
     // NOTE, inside both block and cancelBlock, you can't call another client actions.
     // block of code that will run in background while the HUD is showing.
     block: async (updateMessage) => {
+        // do stuff that takes a long time that needs a HUD
+        // for example
         for (let i = 0; i < 100; i++) {
             await new Promise((resolve) => setTimeout(resolve, 100));
+            // you can update the HUD message while the HUD is showing
             updateMessage(`In progress ${i}%`);
         }
     },
-    // block of code that will run only if the user will press on the HUD'S cancel button.
+    // block of code that will run after the user pressed on the HUD'S cancel button.
     cancelBlock: async () => {
         console.log('cancel button clicked');
     },
