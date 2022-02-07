@@ -18,7 +18,7 @@ The content can be a string or HTML. \
 If the content starts with a HTML tag it will be shown as HTML.\
 What about themes in native?
 #### IsHtml
-Indicate if the dialog content is an HTML. 
+Indicates if the content should be rendered as an HTML div.
 #### Actions
 Every action has a Key and a Title.\
 At least one action must be defined.
@@ -62,7 +62,6 @@ We can show a dialog from the CPI Node like one of the following examples.
 #### Usage #1 - show an alert
 ```typescript
 // show an alert - returns undefined
-// throws an exception
 await pepperi.client.alert({
     // optional
     title: 'Hello',
