@@ -11,7 +11,7 @@ This is the documentation of these actions.
 This a list of the client actions:
 
 * [Dialog](actions/dialog.md)
-* [Show HUD](actions/hud.md)
+* [HUD](actions/hud.md)
 
 
 ## Contributing
