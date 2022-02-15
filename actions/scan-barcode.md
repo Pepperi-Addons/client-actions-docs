@@ -42,13 +42,13 @@ we can scan barcode from  CPI Node like the following example:
 const res = await pepperi.client.scanBarcode();
 if (res.Success) {
       console.log('barcodeScan - ', res.Barcode);
-  } else {
-      if (res.Canceled) {
-          console.log('barcodeScan - canceled');
-      }
-      if (res.CameraAccessDenied) {
-          console.log('barcodeScan - camera access denied');
-      }
-  }
+} else {
+    if (res.Canceled) {
+        console.log('barcodeScan - canceled');
+    }
+    if (res.CameraAccessDenied) {
+        console.log('barcodeScan - camera access denied');
+    }
+}
 
 ```
