@@ -8,7 +8,8 @@ You can navigate to:
 * Home Screen
 * Page
 * Account Dashboard
-* Cart
+* Transaction + Filters
+* Activity
 * Generic List
 * Item Information
 
@@ -119,8 +120,8 @@ await pepperi.client.navigate('Home');
 ### Naviagate to Page
 ```typescript
 await pepperi.client.navigate('Page', {
-        pageKey: 'e66f673a-f281-45ac-8187-9016a4e79d36',
-        pageParams: {
+        uuid: 'e66f673a-f281-45ac-8187-9016a4e79d36',
+        params: {
             accountUUID: '8519a8b4-b7bd-495a-9173-c035b4216ba7',
             activityUUID: '48d3059e-9efc-4208-a389-5c162acd5150',
         },
@@ -130,26 +131,41 @@ await pepperi.client.navigate('Page', {
 ```typescript
 //TBD navigate to acount dashboard from stack or create new - go to home first?
 await pepperi.client.navigate('AccountDashboard', { 
-        accountUUID: 'ddb7ed34b0144ff48ab0878b0f68388b'
+        uuid: 'ddb7ed34b0144ff48ab0878b0f68388b'
     }); 
 ```
-### Naviagate to Cart
+### Naviagate to Transaction
 ```typescript
-await pepperi.client.navigate('Cart', { 
-        orderUUID: 'ddb7ed34b0144ff48ab0878b0f68388b'
+await pepperi.client.navigate('Transaction', { 
+        uuid: 'ddb7ed34b0144ff48ab0878b0f68388b',
+        script: { // TODO add it for all navgations?
+            uuid: "asdf",
+            params: {
+                accountUUID: '8519a8b4-b7bd-495a-9173-c035b4216ba7',
+                activityUUID: '48d3059e-9efc-4208-a389-5c162acd5150',
+            }
+        }
+    });
+```
+### Naviagate to Activity
+```typescript
+await pepperi.client.navigate('Activity', { 
+        uuid: 'ddb7ed34b0144ff48ab0878b0f68388b'
     });
 ```
 ### Naviagate to GenericList
 ```typescript
 await pepperi.client.navigate('GenericList', { 
-        listKey: 'ddb7ed34b0144ff48ab0878b0f68388b' // TODO entering to generic list cleans other ui pages
+        uuid: 'ddb7ed34b0144ff48ab0878b0f68388b' // TBD entering to generic list cleans other ui pages
     });
 ```
 ### Naviagate to ItemInformation
 ```typescript
 await pepperi.client.navigate('ItemInformation', { 
-        orderItemUUID: '48d3059e-9efc-4208-a389-5c162acd5150',
-        orderUUID: '8519a8b4-b7bd-495a-9173-c035b4216ba7', // without order uuid the item will opned with editing disabled.
+        itemWrntyID: '1234543',
+        itemExternalID: 'sdf3dgfd3',
+        itemUUID: '48d3059e-9efc-4208-a389-5c162acd5150', // TBD external uuid?
+        transactionUUID: '8519a8b4-b7bd-495a-9173-c035b4216ba7', // without order uuid the item will opned with editing disabled.
     });
 ```
 
