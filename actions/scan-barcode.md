@@ -29,8 +29,7 @@ The reason if barcode scanning fails - is the barcode camera access was denied b
 {
   "Success": true,
   "Barcode": "47751076",
-  "Canceled": false,
-  "CameraAccessDenied": false
+  "ErrorMessage": "", // the error message in case success is false. can be UserCancelled or AccessDenied
 }
 ```
 
@@ -39,16 +38,11 @@ we can scan barcode from  CPI Node like the following example:
 
 #### Example 
 ```typescript
-const res = await pepperi.client.scanBarcode();
-if (res.Success) {
-      console.log('barcodeScan - ', res.Barcode);
-} else {
-    if (res.Canceled) {
-        console.log('barcodeScan - canceled');
-    }
-    if (res.CameraAccessDenied) {
-        console.log('barcodeScan - camera access denied');
-    }
+try {
+  const res = await pepperi.client.scanBarcode();
+  console.log('barcodeScan: ', res.barcode);
+} catch (error) {
+  console.log('error: ', error);
 }
 
 ```
