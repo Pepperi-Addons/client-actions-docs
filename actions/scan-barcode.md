@@ -39,10 +39,15 @@ we can scan barcode from  CPI Node like the following example:
 #### Example 
 ```typescript
 try {
-  const res = await pepperi.client.scanBarcode();
-  console.log('barcodeScan: ', res.barcode);
+    const res = await pepperi.client.scanBarcode();
+    if (res.sucsess) {
+        console.log('barcodeScan: ', res.barcode);
+    }
+    else {
+        console.log('barcode failed: ', res.reason); // reason can be 'UserCancelled' or 'AccessDenied'
+    }
 } catch (error) {
-  console.log('error: ', error);
+    console.log('error: ', error);
 }
 
 ```
