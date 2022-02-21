@@ -1,5 +1,5 @@
 # Capture Geo Lcation
-Capture current user's geo location.
+Capture current user's current geo location.
 
 ## Description
 Depending on the user's permissions, the user's current location can be captured.\
@@ -65,15 +65,14 @@ we can capture the current location from  CPI Node like the following example:
 
 #### Example 
 ```typescript
-const res = await pepperi.client.captureGeoLocation({accuracy: 'High', maxWaitTime: 3000});
+try {
 
-if (res.Success) {
-    console.log('Longitude: ', res.Longitude);
-    console.log('Latitude: ', res.Latitude);
-    console.log('Accuracy: ', res.Accuracy);
-}
-else {
-    console.log("Capture Geo Location failed")
-}
+  const res = await pepperi.client.captureGeoLocation({accuracy: 'High', maxWaitTime: 3000});
+  console.log('longitude: ', res.longitude);
+  console.log('latitude: ', res.latitude);
+  console.log('accuracy: ', res.accuracy);
 
+} catch (error) {
+  console.log('GeoLocation failed: ', error);        
+}
 ```
