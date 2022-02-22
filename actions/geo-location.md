@@ -23,6 +23,7 @@ There are three levels of accuracy:
 A number in milliseconds between 0 - 9999 ms.\
 To wait for a response from the GPS services.\
 If the location is reached sooner than the indicated time, the result will return immediately.\
+If your desired level of accuracy was not received at the indicated time, you will receive the location obtained but without the level of accuracy you requested.\
 If a location is not received within the indicated time, the action will fail.
 
 
@@ -36,7 +37,8 @@ The Longitude of the captured location
 #### Latitude
 The Latitude of the captured location
 #### Accuracy
-Denotes the accuracy level of the latitude and longitude coordinates in meters (e.g., 65 meters). 
+Denotes the accuracy level of the latitude and longitude coordinates in meters (e.g., 65 meters).
+ 
 ## Example:
 
 ### Request
