@@ -40,7 +40,7 @@ try {
         console.log('barcodeScan: ', res.barcode);
     }
     else {
-        console.log('barcode failed: ', res.reason); // reason can be 'UserCancelled' or 'AccessDenied'
+        console.log('barcode failed: ', res.reason); // reason can be 'UserCanceled' or 'AccessDenied'
     }
 } catch (error) {
     console.log('error: ', error);
