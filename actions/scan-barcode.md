@@ -10,12 +10,8 @@ The client will return this object
 Indicates whether the barcode scanning was successful or failed.
 #### Barcode
 The Barcode number of the scanned label. 
-#### Canceled
-The reason if barcode scanning fails - is the barcode camera access was denied by the user. 
-#### CameraAccessDenied
-The reason if barcode scanning fails - is the barcode camera access was denied by the user. 
-
-## Example:
+#### ErrorMessage
+The error message in case success is false, can be UserCanceled or AccessDenied
 
 ### Request
 ```json
@@ -29,7 +25,7 @@ The reason if barcode scanning fails - is the barcode camera access was denied b
 {
   "Success": true,
   "Barcode": "47751076",
-  "ErrorMessage": "", // the error message in case success is false. can be UserCancelled or AccessDenied
+  "ErrorMessage": "", 
 }
 ```
 
