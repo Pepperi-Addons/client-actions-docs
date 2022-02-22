@@ -12,6 +12,8 @@ This a list of the client actions:
 
 * [Dialog](actions/dialog.md)
 * [Geo Location](actions/geo-location.md)
+* [HUD](actions/hud.md)
+
 
 ## Contributing
 Each client action is documented in a seperate file, in the actions folder.
