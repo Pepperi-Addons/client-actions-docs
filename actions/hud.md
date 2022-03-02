@@ -139,7 +139,7 @@ const hudOptions = {
         // do stuff that takes a long time that needs a HUD
         // for example:
         // You can call any client action you want like this.
-        await pepperi.client.alert('Alert', 'we are ready...');
+        await client.alert('Alert', 'we are ready...');
         for (let i = 0; i < 100; i++) {
             await new Promise((resolve) => setTimeout(resolve, 100));
             // you can update the HUD message while the HUD is showing
@@ -148,7 +148,7 @@ const hudOptions = {
     },
 };
 
-const res = await pepperi.client.showHUD(hudOptions);
+const res = await client.showHUD(hudOptions);
 if (res.canceled) {
     console.log('HUD canceled');
     // do stuff..

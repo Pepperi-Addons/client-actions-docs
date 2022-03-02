@@ -38,7 +38,7 @@ Some code examples.
 
 #### Example #1 - show an alert
 ```typescript
-const res = await pepperi.client.doAction({
+const res = await client.doAction({
     'Hello', 'world'
 });
 // what amazing stuff can we do with the action result?
