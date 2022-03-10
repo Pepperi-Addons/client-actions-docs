@@ -14,6 +14,9 @@ This a list of the client actions:
 * [Scan Barcode](actions/scan-barcode.md)
 * [Geo Location](actions/geo-location.md)
 * [HUD](actions/hud.md)
+* [Navigation](actions/navigation.md)
+* [Load Page](actions/load-page.md)
+* [Load Legacy Page](actions/load-legacy-page.md)
 
 
 ## Contributing
