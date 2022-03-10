@@ -62,7 +62,7 @@ We can show a dialog from the CPI Node like one of the following examples.
 #### Usage #1 - show an alert
 ```typescript
 // show an alert - returns undefined
-await pepperi.client.alert({
+await client.alert({
     // optional
     title: 'Hello',
     content: 'world',
@@ -74,7 +74,7 @@ await pepperi.client.alert({
 // show an confirmation alert
 // with OK and Cancel options
 // returns true if ok was clicked
-const res = await pepperi.client.confirm({
+const res = await client.confirm({
     // optional
     title: 'Hello',
 
@@ -87,7 +87,7 @@ console.log(res); // true or false
 ```typescript
 // returns the value of the action selected on the client
 // The value can be any type you want. string, number, json, functions and etc..
-const res = await pepperi.client.showDialog({
+const res = await client.showDialog({
     // optional
     title: 'Hello',
     

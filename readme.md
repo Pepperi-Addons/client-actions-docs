@@ -16,6 +16,16 @@ This a list of the client actions:
 * [HUD](actions/hud.md)
 
 
+#### Usage Example
+```typescript
+// show an alert for exapmle
+const client = data.client; // data comes from the interceptor
+const res = await client.alert({
+    title: 'Hello',
+    content: 'world',
+});
+```
+
 ## Contributing
 Each client action is documented in a seperate file, in the actions folder.
 [This](action-template.md) is a template of how a client action should be documented.

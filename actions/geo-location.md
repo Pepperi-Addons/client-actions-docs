@@ -69,7 +69,7 @@ we can capture the current location from  CPI Node like the following example:
 ```typescript
 try {
 
-  const res = await pepperi.client.captureGeoLocation({accuracy: 'High', maxWaitTime: 3000});
+  const res = await client.captureGeoLocation({accuracy: 'High', maxWaitTime: 3000});
   console.log('longitude: ', res.longitude);
   console.log('latitude: ', res.latitude);
   console.log('accuracy: ', res.accuracy);
