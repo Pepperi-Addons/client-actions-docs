@@ -1,8 +1,7 @@
 # Load Page
 Client will load a page.
 ## Description
-Mobile apps (iOS & Android) will navigate and load the new page. \
-Web apps will load the new page in the current window.\
+Client will load a page.
 Note: This action only applies to [Pages](https://apidesign.pepperi.com/internal/pages), in order to load legacy pages, use the [Load Legacy Page](load-legacy-page.md) action.
 
 
@@ -12,14 +11,6 @@ Note: This action only applies to [Pages](https://apidesign.pepperi.com/internal
 The key of the page to load.
 #### ```PageParams```
 The parameters of the page.
-#### ```NavigationOptions```
-An object with the navigation options (The option are the same as in [Navigation](navigation.md) actions).\
-Supported options are:
-* PresentationStyle 
-* TransitionType
-
-See: [PresentationStyle](navigation.md#presentationstyle), [TransitionType](navigation.md#TransitionType)
-
 
 ### Return Object:
 The client will return this object
@@ -34,14 +25,8 @@ Indicate if the action is succedded.
     "Data": {
         "PageKey": "e66f673a-f281-45ac-8187-9016a4e79d36",
         "PageParams": { 
-            "pageParams":{
-                "accountUUID":"ddb7ed34b0144ff48ab0878b0f68388b"
-            }
+            "accountUUID":"ddb7ed34b0144ff48ab0878b0f68388b"
         },
-        "NavigationOptions": {
-            "PresentationStyle": "FullScreen",
-            "TransitionType": "Replace"
-        }
     }    
 }
 ```
@@ -51,3 +36,15 @@ Indicate if the action is succedded.
   "Success": true,
   "ErrorMessage": "", 
 }
+```
+
+## Usage
+```typescript
+const options = {
+    pageKey: 'e66f673a-f281-45ac-8187-9016a4e79d36',
+    pageParams: {
+        accountUUID: data.params.accountUUID,
+    },
+};
+await client.loadPage(options);
+```
