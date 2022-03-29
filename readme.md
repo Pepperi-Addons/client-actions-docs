@@ -14,6 +14,7 @@ This a list of the client actions:
 * [Scan Barcode](actions/scan-barcode.md)
 * [Geo Location](actions/geo-location.md)
 * [HUD](actions/hud.md)
+* [Navigation](actions/navigation.md)
 
 
 #### Usage Example
