@@ -62,11 +62,11 @@ We can show a dialog from the CPI Node like one of the following examples.
 #### Usage #1 - show an alert
 ```typescript
 // show an alert - returns undefined
-await client.alert({
+await client.alert(
     // optional
     title: 'Hello',
     content: 'world',
-});
+);
 ```
 
 #### Usage #2 - confirmation
@@ -74,12 +74,12 @@ await client.alert({
 // show an confirmation alert
 // with OK and Cancel options
 // returns true if ok was clicked
-const res = await client.confirm({
+const res = await client.confirm(
     // optional
     title: 'Hello',
 
     content: 'world',
-});
+);
 console.log(res); // true or false
 ```
 
