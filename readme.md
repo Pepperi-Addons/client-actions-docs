@@ -16,7 +16,7 @@ This a list of the client actions:
 * [HUD](actions/hud.md)
 * [Navigation](actions/navigation.md)
 
-## Client Action Commiunication
+## Client Action Communication
 How did we get here?
 
 Client acions can be called only from an [event interceptors](https://pepperi-addons.github.io/cpi-node/#events) that allows to call client actions.
