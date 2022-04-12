@@ -38,7 +38,9 @@ The Longitude of the captured location
 The Latitude of the captured location
 #### Accuracy
 Denotes the accuracy level of the latitude and longitude coordinates in meters (e.g., 65 meters).
- 
+ #### ErrorMessage
+The error message in case success is false, can be LocationUnknown or LocationAccessDenied
+
 ## Example:
 
 ### Request
