@@ -72,11 +72,16 @@ we can capture the current location from  CPI Node like the following example:
 try {
 
   const res = await client.captureGeoLocation({accuracy: 'High', maxWaitTime: 3000});
-  console.log('longitude: ', res.longitude);
-  console.log('latitude: ', res.latitude);
-  console.log('accuracy: ', res.accuracy);
+    if (res.sucsess) {
+        console.log('longitude: ', res.longitude);
+        console.log('latitude: ', res.latitude);
+        console.log('accuracy: ', res.accuracy);  // in meters
+    }
+    else {
+        console.log('GeoLocation failed: ', res.reason); // reason can be 'LocationUnknown' or 'LocationAccessDenied' 
+    } 
 
 } catch (error) {
-  console.log('GeoLocation failed: ', error);        
+  console.log('error: ', error);
 }
 ```
