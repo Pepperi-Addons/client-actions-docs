@@ -82,7 +82,7 @@ try {
         console.log('accuracy: ', res.accuracy);  // in meters
     }
     else {
-        console.log('GeoLocation failed: ', res.reason); // reason can be 'UnknownLocation' or 'AccessDenied' or 'Error'
+        console.log('GeoLocation failed: ', res.reason); // reason can be 'UnknownLocation' or 'AccessDenied'
     } 
 
 } catch (error) {
