@@ -16,6 +16,37 @@ This a list of the client actions:
 * [HUD](actions/hud.md)
 * [Navigation](actions/navigation.md)
 
+## Client Action Communication
+How did we get here?
+
+Client acions can be called only from an [event interceptors](https://pepperi-addons.github.io/cpi-node/#events) that allows to call client actions.
+
+The interceptor code snippet is called when the client emits an event with a event key that this interceptor is subscribed to.
+
+In order to know if an event interceptor is allowed to call a client action, we need to check if the ```
+data?.client``` that is passed to the interceptor is defined.
+
+In case the client emits an event that runs an interceptor that calls a client action, the client will get an object that contains a client action to perform.
+The object will look like this:
+
+```json
+{
+  "Type": "Action Name",
+  "Data": {
+    // the action parameters go here
+  },
+  "callback": "615b08f3-ccd5-4fe5-8088-31f0966128d6"
+}
+```
+The ```Type``` is the name of the [client action](#client-actions) to perform.\
+The ```Data``` is the parameters of the action.\
+The ```callback``` uuid, is used to identify the event key that the client should emit to in order to return the result of the action.
+
+In the [client actions](#client-actions) documentation, we will ignore the ```callback``` uuid.
+
+
+
+
 
 #### Usage Example
 ```typescript
