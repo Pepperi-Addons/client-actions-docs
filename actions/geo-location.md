@@ -38,7 +38,13 @@ The Longitude of the captured location
 The Latitude of the captured location
 #### Accuracy
 Denotes the accuracy level of the latitude and longitude coordinates in meters (e.g., 65 meters).
- 
+ #### ErrorMessage
+The error message in case success is false.\
+The error Enum can be:
+* UnknownLocation
+* AccessDenied
+* Error (for general errors)
+
 ## Example:
 
 ### Request
@@ -70,11 +76,16 @@ we can capture the current location from  CPI Node like the following example:
 try {
 
   const res = await client.captureGeoLocation({accuracy: 'High', maxWaitTime: 3000});
-  console.log('longitude: ', res.longitude);
-  console.log('latitude: ', res.latitude);
-  console.log('accuracy: ', res.accuracy);
+    if (res.success) {
+        console.log('longitude: ', res.longitude);
+        console.log('latitude: ', res.latitude);
+        console.log('accuracy: ', res.accuracy);  // in meters
+    }
+    else {
+        console.log('GeoLocation failed: ', res.reason); // reason can be 'UnknownLocation' or 'AccessDenied'
+    } 
 
 } catch (error) {
-  console.log('GeoLocation failed: ', error);        
+  console.log('error: ', error);
 }
 ```
