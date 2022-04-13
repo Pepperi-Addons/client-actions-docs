@@ -39,7 +39,11 @@ The Latitude of the captured location
 #### Accuracy
 Denotes the accuracy level of the latitude and longitude coordinates in meters (e.g., 65 meters).
  #### ErrorMessage
-The error message in case success is false, can be UnknownLocation or AccessDenied or Error for general errors.
+The error message in case success is false.\
+The error Enum can be:
+* UnknownLocation
+* AccessDenied
+* Error (for general errors)
 
 ## Example:
 
