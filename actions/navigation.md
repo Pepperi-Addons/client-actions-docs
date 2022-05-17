@@ -16,13 +16,8 @@ Navigation back from special legacy pages will be defined seperately for each pa
 
 #### ```URL```
 The slug to navigate to.
-#### ```PresentationStyle```
-The style of the page presentation.
-There are two options:
-* FullScreen
-* Modal
 
-#### ```History```  (FullScreen only)
+#### ```History```
 Defines how the client will display the requested page in terms of the navigation history stack. 
 
 There are two options:
@@ -48,7 +43,6 @@ The client will will not return any object.
     "Type": "Navigation",
     "Data": {
         "URL": "my_page?param1=value1&param2=value2",
-        "PresentationStyle": "FullScreen",
         "History": "None",
     }    
 }
@@ -74,7 +68,6 @@ No response for all navigation requests.
 // do stuff..
 const options = {
     url: 'my_page?accountUUID=ddb7ed34b0144ff48ab0878b0f68388b',
-    presentationStyle: 'FullScreen',
     history: 'ClearTo',
 };
 await client.navigateTo(options);
@@ -86,7 +79,6 @@ await client.navigateTo(options);
 ```typescript
 const options = {
     url: 'my_second_page',
-    presentationStyle: 'Modal',
 };
 await client.navigateTo(options);
 ```
