@@ -35,14 +35,14 @@ The object will look like this:
   "Data": {
     // the action parameters go here
   },
-  "callback": "615b08f3-ccd5-4fe5-8088-31f0966128d6"
+  "Callback": "615b08f3-ccd5-4fe5-8088-31f0966128d6"
 }
 ```
 The ```Type``` is the name of the [client action](#client-actions) to perform.\
 The ```Data``` is the parameters of the action.\
-The ```callback``` uuid, is used to identify the event key that the client should emit to in order to return the result of the action.
+The ```Callback``` uuid, is used to identify the event key that the client should emit to in order to return the result of the action.
 
-In the [client actions](#client-actions) documentation, we will ignore the ```callback``` uuid.
+In the [client actions](#client-actions) documentation, we will ignore the ```Callback``` uuid.
 
 
 
