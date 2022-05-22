@@ -52,10 +52,10 @@ In the [client actions](#client-actions) documentation, we will ignore the ```Ca
 ```typescript
 // show an alert for exapmle
 const client = data.client; // data comes from the interceptor
-const res = await client.alert({
+const res = await client.alert(
     title: 'Hello',
     content: 'world',
-});
+);
 ```
 
 ## Contributing
