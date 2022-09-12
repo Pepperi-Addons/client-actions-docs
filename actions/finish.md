@@ -7,8 +7,11 @@ The user should provide a function that produces the return value.\
 This function is passed to the event as a data parameter of the interceptor.\
 When calling the finish event, the completion function is passed in the eventData and it is executes when the event loop ends.
 
+### Parameters
+Parameter object will be the data the user produced in the interceptor.
+
 ### Return Object:
-An object that the user creates.
+Client stop the event loop. There is no callback.
 
 ## Usages
 ```typescript
