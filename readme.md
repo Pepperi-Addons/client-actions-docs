@@ -11,6 +11,7 @@ This is the documentation of these actions.
 This a list of the client actions:
 
 * [Dialog](actions/dialog.md)
+* [Modal](actions/modal.md)
 * [Scan Barcode](actions/scan-barcode.md)
 * [Geo Location](actions/geo-location.md)
 * [HUD](actions/hud.md)
