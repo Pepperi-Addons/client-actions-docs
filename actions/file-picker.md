@@ -43,7 +43,7 @@ The error message in case success is false, can be UserCanceled or AccessDenied
 ```
 
 ## Usages
-we can scan barcode from  CPI Node like the following example:
+we can select a file from  CPI Node like the following example:
 
 #### Example 
 ```typescript
