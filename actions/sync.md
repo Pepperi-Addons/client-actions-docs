@@ -5,8 +5,7 @@ Perform sync on the client.
 Allows to ask the client to perform sync and with an option to waiting for it to finish.
 
 ### Return Object
-This action not request the client to return any object, it depends on [HUD](actions/hud.md) client action.
-The action depen
+This action not request the client to return any object, it depends on [HUD](./hud.md) client action.
 
 ## Usages
 we can perform sync using CPI Node like the following example:
