@@ -16,6 +16,8 @@ This a list of the client actions:
 * [Geo Location](actions/geo-location.md)
 * [HUD](actions/hud.md)
 * [Navigation](actions/navigation.md)
+* [Sync](actions/sync.md)
+
 
 ## Client Action Communication
 How did we get here?
