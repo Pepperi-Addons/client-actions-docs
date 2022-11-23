@@ -9,7 +9,7 @@ This action not request the client to return any object, it depends on [HUD](act
 The action depen
 
 ## Usages
-we can scan barcode from  CPI Node like the following example:
+we can perform sync using CPI Node like the following example:
 
 #### Example 
 ```typescript
