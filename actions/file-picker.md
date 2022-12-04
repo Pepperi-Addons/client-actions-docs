@@ -4,6 +4,28 @@ File Picker allows you to select files from your device.
 ## Description
 The File Picker prompts the user a dialog that asks whether to select a file from the device or to take a picture using the device camera.
 
+### Parameters 
+
+#### MimeType
+The mime type of the file to select.
+
+#### Title
+The title of the file chooser dialog.
+
+#### BlockPhotoLibrary
+Indicates if the photo library should be blocked.
+If set to true, the user will not be able to select a file from the photo library.
+
+#### SizeLimit
+The maximum size of the file in KB that can be selected.
+
+#### Quality
+The quality of the image compression. Only applies to images.
+
+#### Megapixels
+The number of megapixels of the compressed image. Only applies to images.
+
+
 ### Return Object
 The client will return this object
 
@@ -28,6 +50,11 @@ The error message in case success is false, can be UserCanceled or AccessDenied
   "Data": {
     "MimeType": "image/*",
     "Title": "Select Image", // Optional
+    "BlockPhotoLibrary": true, // optional 
+    "SizeLimit": 1024, // in KB
+    "Quality": 50, // 1-100
+    "Megapixels": 2 // 1-10
+
   }
 }
 ```
@@ -51,6 +78,10 @@ try {
     const options = {
         mimeType: 'image/*',
         title: 'Select Image',
+        blockPhotoLibrary: true, // optional - don't allow to select from photo library
+        sizeLimit :1024, // optional - in KB, default is 200kb, max is 5 GB
+        quality: 20, // default is 50, max is 100
+        megapixels: 2, // default is 2, max is 10
     };
     const res = await client.captureFile(options);
     if (res.success) {
