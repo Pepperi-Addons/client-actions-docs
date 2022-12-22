@@ -17,6 +17,7 @@ This a list of the client actions:
 * [HUD](actions/hud.md)
 * [Navigation](actions/navigation.md)
 * [Sync](actions/sync.md)
+* [File Picker](actions/file-picker.md)
 
 
 ## Client Action Communication
