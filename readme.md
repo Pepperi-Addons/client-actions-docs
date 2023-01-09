@@ -16,6 +16,7 @@ This a list of the client actions:
 * [Geo Location](actions/geo-location.md)
 * [HUD](actions/hud.md)
 * [Navigation](actions/navigation.md)
+* [External Navigation](actions/external-navigation.md)
 * [Sync](actions/sync.md)
 * [File Picker](actions/file-picker.md)
 
