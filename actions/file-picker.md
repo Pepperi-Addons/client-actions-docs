@@ -14,7 +14,7 @@ The title of the file chooser dialog.
 
 #### BlockPhotoLibrary
 Indicates if the photo library should be blocked.
-If set to true, the user will not be able to select a file from the photo library.
+If set to true, the user will not be able to select a file from the photo library. Default false
 
 #### SizeLimit
 The maximum size of the file in KB that can be selected.
