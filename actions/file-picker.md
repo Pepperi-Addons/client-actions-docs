@@ -48,9 +48,10 @@ The error message in case success is false, can be UserCanceled or AccessDenied
 {
   "Type": "FilePicker",
   "Data": {
-    "MimeType": "image/*",
     "Title": "Select Image", // Optional
-    "BlockPhotoLibrary": true, // optional 
+    // Optional - default will ask the user to select from all sources
+    "AllowedFilesSources": [{"Type": "Camera"}, {"Type": "PhotoLibrary"}, {"Type": "Files"}], 
+    "MimeTypes": ["image/*"],
     "SizeLimit": 1024, // in KB
     "Quality": 50, // 1-100
     "Megapixels": 2 // 1-10
@@ -76,7 +77,7 @@ we can select a file from  CPI Node like the following example:
 ```typescript
 try {
     const options = {
-        mimeType: 'image/*',
+        mimeType: 'image/*', // optional default */*
         title: 'Select Image',
         blockPhotoLibrary: true, // optional - don't allow to select from photo library
         sizeLimit :1024, // optional - in KB, default is 200kb, max is 5 GB
