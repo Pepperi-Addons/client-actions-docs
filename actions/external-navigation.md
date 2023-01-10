@@ -56,7 +56,7 @@ No response for all navigation requests.
 const options = {
     url: 'https://www.google.com',
 };
-await client.navigateExternal(options);
+await client.externalNavigation(options);
 // do stuff..
 // NOTE: you can't use client actions after navigateTo action.
 ```
@@ -66,5 +66,5 @@ await client.navigateExternal(options);
 const options = {
     url: 'whatsapp://send?text=Hello%20World'
 };
-await client.navigateExternal(options);
+await client.externalNavigation(options);
 ```
