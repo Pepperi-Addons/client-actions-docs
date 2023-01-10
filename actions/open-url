@@ -1,0 +1,83 @@
+# Open URL
+Open a URL in external application.
+## Description
+Allows the client to open a URL in external application.\
+According to the URL scheme, the client will open the URL in the appropriate application.\
+
+
+Note. Like [Navigation](navigation.md) event, the client will stop the current event loop and not returning a value to the cpi-node.
+
+The client navigation stack will not be affected by this event.
+
+
+
+### Parameters:
+
+#### ```URL```
+The URL to open.
+
+
+
+### Return Object:
+The client will will not return any object.
+
+### Request 
+```json
+{
+    "Type": "OpenURL",
+    "Data": {
+        "URL": "https://api.whatsapp.com/send?phone=972542222222",
+    }    
+}
+```
+
+### Response
+No response for this action.
+
+
+## Usages
+
+#### Example 1 (WhatsApp)
+```typescript
+// do stuff..
+const options = {
+    url: 'https://api.whatsapp.com/send?phone=972542222222',
+};
+await client.openURL(options);
+// do stuff..
+// NOTE: you can't use client actions after navigateTo action.
+```
+
+#### Example 2 (Google Maps)
+```typescript
+const options = {
+    url: 'https://www.google.com/maps/dir/?api=1&destination=32.0853,34.7818',
+};
+await client.openURL(options);
+```
+
+#### Example 3 (Phone Call)
+```typescript
+const options = {
+    url: 'tel:972542222222',
+};
+await client.openURL(options);
+```
+
+#### Example 4 (SMS)
+```typescript
+// do stuff..
+const options = {
+    url: 'sms:972542222222',
+};
+await client.openURL(options);
+```
+
+#### Example 5 (Google)
+```typescript
+// do stuff..
+const options = {
+    url: 'https://www.google.com',
+};
+await client.openURL(options);
+```
