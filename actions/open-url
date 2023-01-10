@@ -7,7 +7,7 @@ According to the URL scheme, the client will open the URL in the appropriate app
 
 Note. Like [Navigation](navigation.md) event, the client will stop the current event loop and not returning a value to the cpi-node.
 
-The client navigation stack will not be affected by this event.
+The client navigation stack will not be affected by this action.
 
 
 

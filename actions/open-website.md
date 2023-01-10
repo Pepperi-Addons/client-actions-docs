@@ -6,7 +6,7 @@ Allows the client to open a web site in the in-app browser.\
 
 Note. Like [Navigation](navigation.md) event, the client will stop the current event loop and not returning a value to the cpi-node.
 
-The client navigation stack will not be affected by this event.
+The client navigation stack will not be affected by this action.
 
 
 
