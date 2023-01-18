@@ -1,12 +1,10 @@
-# Open Web Site
+# Open Browser
 Open a web site in the in-app browser.
 
 ## Description
 Allows the client to open a web site in the in-app browser.\
 
-Note. Like [Navigation](navigation.md) event, the client will stop the current event loop and not returning a value to the cpi-node.
-
-The client navigation stack will not be affected by this action.
+The navigation stack will not be affected by this action.
 
 
 
