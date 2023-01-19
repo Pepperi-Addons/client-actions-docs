@@ -17,7 +17,7 @@ This a list of the client actions:
 * [HUD](actions/hud.md)
 * [Navigation](actions/navigation.md)
 * [Open URI](actions/open-uri.md)
-* [Open Web Site](actions/open-website.md)
+* [Open Browser](actions/open-browser.md)
 * [Sync](actions/sync.md)
 * [File Picker](actions/file-picker.md)
 

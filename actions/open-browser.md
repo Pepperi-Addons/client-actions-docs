@@ -21,7 +21,7 @@ The client will will not return any object.
 ### Request 
 ```json
 {
-    "Type": "OpenWebSite",
+    "Type": "OpenBrowser",
     "Data": {
         "URL": "https://www.google.com",
     }    
@@ -40,7 +40,7 @@ No response for this action.
 const options = {
     url: 'https://www.google.com',
 };
-await client.openWebSite(options);
+await client.openBrowser(options);
 // do stuff..
 // NOTE: you can't use client actions after navigateTo action.
 ```
