@@ -2,7 +2,7 @@
 Open a URI in external application.
 ## Description
 Allows the client to open a URI in external application.\
-According to the URI scheme, the client will open the URI in the appropriate application.\
+According to the URI scheme, the client will ask the operating system to open the URI in the appropriate application.\
 
 The navigation stack will not be affected by this action.
 
