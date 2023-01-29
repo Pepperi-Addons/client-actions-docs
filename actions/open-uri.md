@@ -25,6 +25,7 @@ Indicates whether the URI opening was successful or failed.
 The error message in case success is false.\
 The error can be:
 * NoAppFound - No application was found in the OS to open the URI.
+* InvalidURI - The URI is not valid.
 
 ### Request 
 ```json
