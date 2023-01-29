@@ -16,7 +16,15 @@ The URI to open.
 
 
 ### Return Object:
-The client will will not return any object.
+The client will return this object
+
+#### Success
+Indicates whether the URI opening was successful or failed.
+
+#### ErrorMessage
+The error message in case success is false.\
+The error can be:
+* NoAppFound - No application was found in the OS to open the URI.
 
 ### Request 
 ```json
@@ -29,8 +37,20 @@ The client will will not return any object.
 ```
 
 ### Response
-No response for this action.
+```json
+{
+  "Success": true,
+  "ErrorMessage": ""
+}
+```
 
+##### If no application was found to open the URI the client will return:
+```json
+{ 
+  "Success": false,
+  "ErrorMessage": "NoAppFound"
+}
+```
 
 ## Usages
 
@@ -40,7 +60,13 @@ No response for this action.
 const options = {
     uri: 'https://api.whatsapp.com/send?phone=972542222222',
 };
-await client.openURI(options);
+const res =  await client.openURI(options);
+if (res.success) {
+    console.log('URI opened successfully');
+}
+else {
+    console.log('URI failed to open: ', res.reason);
+}
 // do stuff..
 // NOTE: you can't use client actions after navigateTo action.
 ```
