@@ -102,7 +102,7 @@ try {
             {type: 'PhotoLibrary'},
             {type: 'Files'}
         ], // optional default is all sources
-        mimeTypes: ['image/*'], // optional default is [*/*]
+        allowedExtensions: ['jpg', 'jpeg', 'csv'], // optional - default is all supported extensions
         sizeLimit: 1024, // optional - in KB, default is 200kb, max is 5 GB
         compression: {
             quality: 50, // optional - default is 50, max is 100
@@ -112,8 +112,7 @@ try {
 
     const res = await client.openFilePicker(options);
     if (res.success) {
-        console.log('filePicker: ', res.mimeType);
-        console.log('filePicker: ', res.uri);
+        console.log(`filePicker, mimeType: ${res.mimeType}, uri: ${res.uri}`);
     }
     else {
         console.log('filePicker failed: ', res.reason); // reason can be 'UserCanceled' or 'AccessDenied'
