@@ -4,7 +4,7 @@ File Picker allows you to select files from your device.
 ## Description
 The File Picker prompts the user a dialog that asks whether to select a file from the device or to take a picture using the device camera.
 
-### Parameters 
+## Parameters 
 
 #### MimeType
 The mime type of the file to select.
@@ -20,8 +20,18 @@ Supported sources are:
 * Files
 The default is to allow all sources.
 
-### MimeTypes
-An array of mime types that the user can select.
+### AllowedExtensions
+An array of allowed file extensions. For example: ["jpg", "jpeg", "csv"].\
+AllowedExtensions is an array that defined by PFS, this ensures that the captured files can be saved using [PFS](https://apidesign.pepperi.com/pfs-pepperi-file-service).\
+The allowed extensions list:
+```json
+[
+ ".bmp", ".csv", ".doc", ".docx", ".gif", ".jpg", ".jpeg", ".js",
+ ".json", ".log", ".mp4", ".mpeg", ".pdf", ".png", ".ppt",
+ ".pptx", ".svg", ".txt", ".xls", ".xlsx", ".xml", ".zip"
+]
+```
+
 
 #### SizeLimit
 The maximum size of the file in KB that can be selected.
@@ -33,8 +43,8 @@ The quality of the image compression. Only applies to images.
 The number of megapixels of the compressed image. Only applies to images.
 
 
-### Return Object
-The client will return this object
+## Return Object
+The client will return this object:
 
 #### Success
 Indicates whether the file selection was successful or failed.
@@ -57,11 +67,13 @@ The error message in case success is false, can be UserCanceled or AccessDenied
   "Data": {
     "Title": "Select Image", // Optional
     // Optional - default will ask the user to select from all sources
-    "AllowedFilesSources": [{"Type": "Camera"}, {"Type": "PhotoLibrary"}, {"Type": "Files"}], 
-    "MimeTypes": ["image/*"],
+    "AllowedFilesSources": [{"Type": "Camera"}, {"Type": "PhotoLibrary"}, {"Type": "Files"}],
+    "AllowedExtensions": ["jpg", "jpeg", "csv"],
     "SizeLimit": 1024, // in KB
-    "Quality": 50, // 1-100
-    "Megapixels": 2 // 1-10
+    "Compression": {
+        "Quality": 50, // 1-100
+        "Megapixels": 2 // 1-10
+    }
   }
 }
 ```
@@ -77,9 +89,9 @@ The error message in case success is false, can be UserCanceled or AccessDenied
 ```
 
 ## Usages
-we can select a file from  CPI Node like the following example:
+we can select a file from the client using the following example:
 
-#### Example 1
+####  Example
 ```typescript
 try {
 
@@ -92,11 +104,13 @@ try {
         ], // optional default is all sources
         mimeTypes: ['image/*'], // optional default is [*/*]
         sizeLimit: 1024, // optional - in KB, default is 200kb, max is 5 GB
-        quality: 50, // optional - default is 50, max is 100
-        megapixels: 2 // optional - default is 2, max is 10
+        compression: {
+            quality: 50, // optional - default is 50, max is 100
+            megapixels: 2 // optional - default is 2, max is 10
+        }
     }
 
-    const res = await client.captureFile(options);
+    const res = await client.openFilePicker(options);
     if (res.success) {
         console.log('filePicker: ', res.mimeType);
         console.log('filePicker: ', res.uri);
@@ -121,10 +135,9 @@ try {
         ],
         mimeTypes: ['image/*'],
     }
-    const res = await client.captureFile();
+    const res = await client.openFilePicker(options);
     if (res.success) {
-        console.log('captureImage: ', res.mimeType);
-        console.log('captureImage: ', res.uri);
+        console.log(`captureImage, mimeType: ${res.mimeType}, uri: ${res.uri}`);
     }
     else {
         console.log('captureImage failed: ', res.reason); // reason can be 'UserCanceled' or 'AccessDenied'
