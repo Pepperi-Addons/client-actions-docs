@@ -6,9 +6,6 @@ The File Picker prompts the user a dialog that asks whether to select a file fro
 
 ## Parameters 
 
-#### MimeType
-The mime type of the file to select.
-
 #### Title
 The title of the file chooser dialog.
 
@@ -132,7 +129,6 @@ try {
         allowedFilesSources: [
             {type: 'Camera'}
         ],
-        mimeTypes: ['image/*'],
     }
     const res = await client.openFilePicker(options);
     if (res.success) {
