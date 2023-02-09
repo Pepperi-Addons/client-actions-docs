@@ -55,7 +55,10 @@ Mobile clients will return the URI in a [Data URI scheme](https://en.wikipedia.o
 Web clients will return the URI in a regular URL scheme (like cdn etc..).
 
 #### ErrorMessage
-The error message in case success is false, can be UserCanceled or AccessDenied
+The error message in case success is false, can be:
+* UserCanceled - the user canceled the file selection
+* AccessDenied - the file source is not allowed
+* SizeLimitExceeded - if the selected file exceeds the size limit
 
 ### Request
 ```json
@@ -64,7 +67,11 @@ The error message in case success is false, can be UserCanceled or AccessDenied
   "Data": {
     "Title": "Select Image", // Optional
     // Optional - default will ask the user to select from all sources
-    "AllowedFilesSources": [{"Type": "Camera"}, {"Type": "PhotoLibrary"}, {"Type": "Files"}],
+    "AllowedFilesSources": [
+        {"Type": "Camera", "Title": "Open Camera"},
+        {"Type": "PhotoLibrary", "Title": "Select Photo"},
+        {"Type": "Files", "Title": "Select File"}
+    ],
     "AllowedExtensions": ["jpg", "jpeg", "csv"],
     "SizeLimit": 1024, // in KB
     "Compression": {
