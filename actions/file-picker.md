@@ -23,9 +23,9 @@ AllowedExtensions is an array that defined by PFS, this ensures that the capture
 The allowed extensions list:
 ```json
 [
- ".bmp", ".csv", ".doc", ".docx", ".gif", ".jpg", ".jpeg", ".js",
- ".json", ".log", ".mp4", ".mpeg", ".pdf", ".png", ".ppt",
- ".pptx", ".svg", ".txt", ".xls", ".xlsx", ".xml", ".zip"
+ "bmp", "csv", "doc", "docx", "gif", "jpg", "jpeg", "js",
+ "json", "log", "mp4", "mpeg", "pdf", "png", "ppt",
+ "pptx", "svg", "txt", "xls", "xlsx", "xml", "zip"
 ]
 ```
 
@@ -102,9 +102,9 @@ try {
     const option = {
         title: 'Select Image',
         allowedFilesSources: [
-            {type: 'Camera'},
-            {type: 'PhotoLibrary'},
-            {type: 'Files'}
+            {type: 'Camera', title: 'Open Camera'},
+            {type: 'PhotoLibrary', title: 'Select Photo'},
+            {type: 'Files', title: 'Select File'}
         ], // optional default is all sources
         allowedExtensions: ['jpg', 'jpeg', 'csv'], // optional - default is all supported extensions
         sizeLimit: 1024, // optional - in KB, default is 200kb, max is 5 GB
@@ -119,7 +119,7 @@ try {
         console.log(`filePicker, mimeType: ${res.mimeType}, uri: ${res.uri}`);
     }
     else {
-        console.log('filePicker failed: ', res.reason); // reason can be 'UserCanceled' or 'AccessDenied'
+        console.log('filePicker failed: ', res.reason); // reason can be 'UserCanceled', 'AccessDenied' or 'SizeLimitExceeded'
     }
 } catch (error) {
     console.log('error: ', error);
