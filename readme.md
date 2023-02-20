@@ -64,7 +64,7 @@ const res = await client.alert(
 );
 ```
 
-## Client Action Testing Addon
+## Client Action Playground Addon - a197e5c4-2839-4848-94cd-6cb7b7ccc86e
 * Install clientActionPlayground addon
 * Configure a page block in your app for that addon
 * Test the desired Client Actions
