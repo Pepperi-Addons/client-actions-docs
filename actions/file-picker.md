@@ -15,6 +15,7 @@ Supported sources are:
 * Camera
 * PhotoLibrary
 * Files
+* SignaturePad
 The default is to allow all sources.
 
 ### AllowedExtensions
@@ -104,7 +105,8 @@ try {
         allowedFilesSources: [
             {type: 'Camera', title: 'Open Camera'},
             {type: 'PhotoLibrary', title: 'Select Photo'},
-            {type: 'Files', title: 'Select File'}
+            {type: 'Files', title: 'Select File'},
+            {type: 'SignaturePad', title: 'open Signature Pad'},
         ], // optional default is all sources
         allowedExtensions: ['jpg', 'jpeg', 'csv'], // optional - default is all supported extensions
         sizeLimit: 1024, // optional - in KB, default is 200kb, max is 5 GB
@@ -120,29 +122,6 @@ try {
     }
     else {
         console.log('filePicker failed: ', res.reason); // reason can be 'UserCanceled', 'AccessDenied' or 'SizeLimitExceeded'
-    }
-} catch (error) {
-    console.log('error: ', error);
-}
-
-```
-
-#### Example 2
-```typescript
-// capture image from camera only
-try {
-    const options = {
-        title: 'Capture Image',
-        allowedFilesSources: [
-            {type: 'Camera'}
-        ],
-    }
-    const res = await client.openFilePicker(options);
-    if (res.success) {
-        console.log(`captureImage, mimeType: ${res.mimeType}, uri: ${res.uri}`);
-    }
-    else {
-        console.log('captureImage failed: ', res.reason); // reason can be 'UserCanceled' or 'AccessDenied'
     }
 } catch (error) {
     console.log('error: ', error);
