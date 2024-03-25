@@ -20,6 +20,9 @@ This is the host object that is documented in the corresponding addon block
 #### AllowCancel
 Indicate if the modal has a close button.
 
+### Size
+set modal size (Small | Regular | Large | FullScreen | Inline)
+
 ## Example 1
 
 ### Request
@@ -33,7 +36,8 @@ Indicate if the modal has a close button.
             "pageParams": {},
         },
       "Title": "My Page",
-      "AllowCancel": true
+      "AllowCancel": true,
+      "Size": 'FullScreen'
   },
 }
 ```
@@ -61,6 +65,7 @@ Indicate if the modal has a close button.
         "selectionMode": "multi", // single
         "selectedObjectKeys": [],
       },
+     "Size": 'Large'
   },
 }
 ```
@@ -96,7 +101,8 @@ const modalOptions: ModalOptions = {
     addonBlockName: 'ResourceSelection',
     hostObject: hostObj,
     title: "Select Item",
-    allowCancel: true
+    allowCancel: true,
+    size: 'fullscreen'
 };
 const {canceled, result} = await data.client?.showModal(modalOptionsPages);
 if(!canceled) { 
@@ -114,8 +120,7 @@ const modalOptionsPages: ModalOptions = {
     hostObject: hostObjPages, // according to the ABI
     title: "My Page", // mandatory
     allowCancel: true // default is true
-    // TODO screen sizes parameters..
-    
+    size: 'large'  
 };
 await data.client?.showModal(modalOptionsPages);
 ```
