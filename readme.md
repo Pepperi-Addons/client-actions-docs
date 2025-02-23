@@ -20,6 +20,7 @@ This a list of the client actions:
 * [Open Browser](actions/open-browser.md)
 * [Sync](actions/sync.md)
 * [File Picker](actions/file-picker.md)
+* [User Parameters](actions/user-parameters.md)
 
 
 ## Client Action Communication
