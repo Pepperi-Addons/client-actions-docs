@@ -1,8 +1,8 @@
-# User Parameters Change
-emit user-parameters-change.
+# Global Parameters Change
+handle global parameters change.
 
 ## Description
-emit custom event (on the window) 'receive-parameters-change-event' (for pages usage).\
+emit custom event (on the window) 'receive-global-parameters-change-event' (for pages usage).\
 for the application header the container will deside how to pass the data.\
 Pass all the parameters from the client action to this event.
 
