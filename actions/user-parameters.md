@@ -61,7 +61,7 @@ we can throw parameters change from CPI Node like the following example:
 #### Example 
 ```typescript
 try {
-    const res = await client.userParametersChange({parameters: [{ 
+    const res = await client.udp.globalParametersChange({parameters: [{ 
       key: "AccountName", 
       value: "Account 1", 
       sourceAddonUUID: "50062e0c-9967-4ed4-9102-f2bc50602d41",
