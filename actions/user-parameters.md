@@ -12,8 +12,6 @@ Pass all the parameters from the client action to this event.
 The addon uuid that make the change (pages | app_header)
 #### SourceKey
 The source key that make the change, page key if changed from a page, app header key (app_header) if changed from app header etc...
-#### Counter
-To avoid endless loop - we gonna stop call to this client action when counter is equal 3
 #### Parameters
 Array of the changed parameters (each parameter is Object like this).
 
@@ -43,7 +41,6 @@ The error Enum can be:
   "Data": {
     "SourceAddonUUID": "50062e0c-9967-4ed4-9102-f2bc50602d41",
     "SourceKey": "88885555-bbbb-bbbb-bbbb-cacacacacaca",
-    "Counter": 1, // To avoid endless loop - we gonna stop call to this client action when counter is equal 3
     "Parameters": [{
       "Key": "AccountName",
       "Value": "Account 1"
@@ -68,7 +65,6 @@ try {
     const res = await client.udp.globalParametersChange({
       sourceAddonUUID: "50062e0c-9967-4ed4-9102-f2bc50602d41",
       sourceKey: "88885555-bbbb-bbbb-bbbb-cacacacacaca"},
-      counter: 1, // To avoid endless loop - we gonna stop call to this client action when counter is equal 3
       parameters: [{ 
         key: "AccountName", 
         value: "Account 1"
