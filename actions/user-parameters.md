@@ -1,8 +1,8 @@
-# Global Parameters Change
-handle global parameters change.
+# User Defined Parameters Change
+handle user defined parameters change.
 
 ## Description
-emit custom event (on the window) 'receive-global-parameters-change-event' (for pages usage).\
+emit custom event (on the window) 'receive-udp-change-event' (for pages usage).\
 for the application header the container will deside how to pass the data.\
 Pass all the parameters from the client action to this event.
 
@@ -37,7 +37,7 @@ The error Enum can be:
 ### Request
 ```json
 {
-  "Type": "GlobalParametersChange",
+  "Type": "UserDefinedParametersChange",
   "Data": {
     "SourceAddonUUID": "50062e0c-9967-4ed4-9102-f2bc50602d41",
     "SourceKey": "88885555-bbbb-bbbb-bbbb-cacacacacaca",
@@ -62,7 +62,7 @@ we can throw parameters change from CPI Node like the following example:
 #### Example 
 ```typescript
 try {
-    const res = await client.udp.globalParametersChange({
+    const res = await client.userDefinedParametersChange({
       sourceAddonUUID: "50062e0c-9967-4ed4-9102-f2bc50602d41",
       sourceKey: "88885555-bbbb-bbbb-bbbb-cacacacacaca"},
       parameters: [{ 
